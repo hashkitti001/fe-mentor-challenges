@@ -17,8 +17,9 @@
     }
     .detail h3{
         text-transform: uppercase;
-        font-size: 0.9rem;
+        font-size: 0.4rem;
         margin-top:1rem;
+        color:var(--darkgrey);
     }
     .results {
         /* border:2px solid greenyellow; */
@@ -63,8 +64,9 @@
     }
     .detail h3{
         text-transform: uppercase;
-        font-size: 0.9rem;
+        font-size: 0.55rem;
         margin-top:1rem;
+        color:var(--darkgrey);
     }
     .results {
         /* border:2px solid greenyellow; */
@@ -143,8 +145,10 @@ input[type="text"]::placeholder{
     border-radius: 0 0.8rem 0.8rem 0;
     background: var(--verydarkgrey);
 } */
-/* .detail{
-} */
+.detail p{
+    font-weight: 500;
+    font-size: 2rem;
+}
 .results {
     display: flex;
     position: absolute;

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
-
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -32,10 +32,10 @@
     <div class="formspace">
       <h1>IP Address Tracker</h1>
       <div class="field">
-        <input type="text" placeholder="Search for any IP address or domain">
-        <button id="submit"><img src="./images/icon-arrow.svg" alt="Forward arrow"></button>
+        <input type="text" id="ipinput" placeholder="Search for any IP address or domain">
+        <button id="submit" onclick="getLocationData()"><img src="./images/icon-arrow.svg" alt="Forward arrow"></button>
       </div>
-     
+
     </div>
     <div class="results">
       <article class="detail">
@@ -52,9 +52,9 @@
       <div class="line"></div>
       <article class="detail">
         <h3> Timezone</h3>
-          <!-- add offset value dynamically using the API -->
-          <br>
-        <p>UTC <small id="timezone">  ----</small></p>
+        <!-- add offset value dynamically using the API -->
+        <br>
+        <p>UTC <small id="timezone"> ----</small></p>
       </article>
       <div class="line"></div>
       <article class="detail">
@@ -62,15 +62,46 @@
         <br>
         <p id="isp">----</p>
       </article>
-  </div>
-  <div id="maparea">
-jjj
-  </div>
+    </div>
+    <div id="maparea">
+      jjj
+    </div>
   </div>
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+  <script>
+    
+      function getLocationData() {
+        const apiKey = 'at_h7CULRHWlCZtAJGk3hQVpFHIDJhvk';
+        const ipAddress = $("#ipinput").val();
+        const apiUrl = `https://geo.ipify.org/api/v2/country?apiKey=${apiKey}&ipAddress=${ipAddress}`;
+
+        // Proxy URL using crossorigin.me
+        const proxyUrl = 'https://api.allorigins.win/raw?url=';
+
+        // Construct the final URL with the proxy
+        const finalUrl = proxyUrl + encodeURIComponent(apiUrl);
+
+        const options = {
+          method: 'GET',
+        };
+
+        fetch(finalUrl, options)
+          .then(response => response.json())
+          .then(data => {
+            //data
+            $("#ip").text(data.ip);
+            $("#location").text(data.location.region);
+            $("#timezone").text(data.location.timezone);
+            $("#isp").text(data.isp);
+            console.log(data)
+          })
+          .catch(error => console.error('Error:', error));
+      }
+  
+  </script>
 </body>
 
 </html>
