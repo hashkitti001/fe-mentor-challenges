@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -14,8 +13,6 @@
   <link rel="stylesheet" type="text/css" href="./style.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>Frontend Mentor | IP Address Tracker</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
       font-size: 11px;
@@ -28,57 +25,60 @@
   </style>
 </head>
 
-<body onload="getLocationData()">
+<body>
   <div class="container">
     <div class="formspace">
       <h1>IP Address Tracker</h1>
       <div class="field">
-        <input type="text" id="ipinput"
-          pattern="/^([1-9][0-9]?|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([1-9][0-9]?|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([1-9][0-9]?|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([1-9][0-9]?|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$/gi"
-          placeholder="Search for any IP address or domain">
+        <input type="text" id="ipinput" pattern="(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" placeholder="Search for any IP address or domain" required>
         <button id="submit" onclick="getLocationData()"><img src="./images/icon-arrow.svg" alt="Forward arrow"></button>
       </div>
-
+      
     </div>
     <div class="results">
       <article class="detail">
         <h3>IP Address</h3>
-        <br>
-        <p id="ip">----
+        <p id="ip">----</p>
       </article>
       <div class="line"></div>
       <article class="detail">
         <h3>Location</h3>
-        <br>
         <p id="location">----</p>
       </article>
       <div class="line"></div>
       <article class="detail">
-        <h3> Timezone</h3>
-        <!-- add offset value dynamically using the API -->
-        <br>
-        <p>UTC <small id="timezone"> ----</small></p>
+        <h3>Timezone</h3>
+        <p id="timezone">----</p>
       </article>
       <div class="line"></div>
       <article class="detail">
         <h3>ISP</h3>
-        <br>
         <p id="isp">----</p>
       </article>
     </div>
-    <div id="maparea">
-
-    </div>
+    <div id="maparea"></div>
   </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Iwegbu Jeddy</a>.
   </div>
   <script>
+    let map; 
+
+    async function clearMap() {
+      if (map) {
+        map.remove();
+      }
+    }
 
     function initMap(latitude, longitude) {
+      // Check if the map exists and clear it before initializing a new map
+      if (map) {
+        clearMap();
+      }
+
       // Create a Leaflet map and set its view to the specified coordinates
-      const map = L.map('maparea').setView([latitude, longitude], 13);
+      map = L.map('maparea').setView([latitude, longitude], 13);
 
       // Add a tile layer (OpenStreetMap in this example)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -88,14 +88,14 @@
       // Add a marker to the map
       L.marker([latitude, longitude]).addTo(map);
     }
+
     function getLocationData() {
       const ipAddress = $("#ipinput").val();
       const apiUrl = `https://ipapi.co/${ipAddress}/json/`;
 
-      // Proxy URL using crossorigin.me
+      
       const proxyUrl = 'https://api.allorigins.win/raw?url=';
 
-      // Construct the final URL with the proxy
       const finalUrl = proxyUrl + encodeURIComponent(apiUrl);
 
       const options = {
@@ -105,17 +105,14 @@
       fetch(finalUrl, options)
         .then(response => response.json())
         .then(data => {
-          //data
+          
           $("#ip").text(data.ip);
-          $("#location").text(data.country_capital + ", " + data.country);
-          $("#timezone").text(data.utc_offset);
+          $("#location").text(`${data.city}, ${data.region}`);
+          $("#timezone").text(`UTC ${data.utc_offset}`);
           $("#isp").text(data.org);
+
+          
           initMap(data.latitude, data.longitude);
-          console.log(data)
-
-
-
-
         })
         .catch(error => {
           Swal.fire({
@@ -127,12 +124,12 @@
           console.error('Error:', error);
         });
     }
+
     document.getElementById('ipinput').addEventListener('keydown', function (event) {
       if (event.keyCode === 13) {
         getLocationData();
       }
     });
-
   </script>
 </body>
 

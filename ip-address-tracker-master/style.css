@@ -224,7 +224,14 @@ input[type="text"]::placeholder {
     font-weight: 500;
     font-size: 2rem;
 }
-
+#ipinput:invalid {
+    outline: 1px solid red; 
+  }
+  
+  
+  #ipinput:valid {
+    border: none;
+  }
 .results {
     display: flex;
     position: absolute;
