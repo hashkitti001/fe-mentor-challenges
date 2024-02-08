@@ -147,7 +147,7 @@ aside {
     color: var(--dark-gray-blue);
 }
 
-@media(max-width:375px) {
+@media(min-width:375px) and (max-width:500px){
 
     .web3img,
     .firsttext,
