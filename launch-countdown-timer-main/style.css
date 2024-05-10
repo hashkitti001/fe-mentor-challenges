@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'Red Hat Display';
+    src: url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+}
+* {
+    border:0;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    height: auto;
+
+}
+:root{
+    --white:hsl(0, 0%, 100%)
+    --desaturated-dark-blue:hsl(236, 21%, 26%);
+    --dark-blue:hsl(235, 16%, 14%);
+    --very-darkblue: hsl(234, 17%, 12%);
+    --grayish-blue:hsl(237, 18%, 59%);
+    --soft-red:hsl(345, 95%, 68%);
+}
+
+body{
+    background:var(--desaturated-dark-blue);
+    background-image: url("./images/bg-stars.svg");
+    font-family: 'Red Hat Display', sans-serif;
+    /*background-image: url("./images/pattern-hills.svg");*/
+}
+h1 {
+    font-size: 3rem;
+    font-family: sans-serif;
+    color:#fff;
+    text-align: center;
+}
+.countdown{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:3rem;
+}
