@@ -1,61 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-    <title>Frontend Mentor | Social proof section</title>
+  <title>Frontend Mentor | Social proof section</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
-  </head>
-  <body>
-    10,000+ of our users love our products.
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
 
-    We only provide great products combined with excellent customer service.
-    See what our satisfied customers are saying about our services.
-    
-    Rated 5 Stars in Reviews
-    Rated 5 Stars in Report Guru
-    Rated 5 Stars in BestTech
-    
-    Colton Smith 
-    Verified Buyer
-    "We needed the same printed design as the one we had ordered a week prior.
-    Not only did they find the original order, but we also received it in time.
-    Excellent!"
-    
-    Irene Roberts 
-    Verified Buyer
-    "Customer service is always excellent and very quick turn around. Completely
-    delighted with the simplicity of the purchase and the speed of delivery."
-    
-    Anne Wallace 
-    Verified Buyer
-    "Put an order with this company and can only praise them for the very high
-    standard. Will definitely use them again and recommend them to everyone!"
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+<body>
+  <section class="flex flex-col w-full">
+    <div class="top flex gap-4 w-[80%] h-6">
+      <div class="text">
+        <h1 class="text-5xl font-bold word-wrap leading-4">10,000+ of our users love our products.</h1>
+        <p class="text-md"> We only provide great products combined with excellent customer service.
+          See what our satisfied customers are saying about our services.
+        </p>
+      </div>
+      <div class="ratings">
+        <div class="flex rating gap-4">
+          <div class="flex gap-2">
+            <img src="./images/icon-star.svg" />
+            <img src="./images/icon-star.svg" />
+            <img src="./images/icon-star.svg" />
+            <img src="./images/icon-star.svg" />
+            <img src="./images/icon-star.svg" />
+          </div>
+          <p class="font-bold text-sm">Rated 5 stars in Reviews</p>
+        </div>
+
+      </div>
     </div>
-  </body>
+    <div class="testimonials flex gap-3 w-full h-full">
+      <!--First person-->
+      <div class="flex gap-3 testifier-card rounded-sm my-4">
+        <div class="img-holder rounded-full overflow-hidden">
+          <img src="./images/image-colton.jpg" alt="Profile Pic">
+        </div>
+        <div class="testimony-body flex flex-col gap-3">
+          <div class="testifier-deets text text-xl">
+            <h3 class="text text-white text-xl font-bold">Colton Smith</h3>
+            <p class="text text-pink"> Verified Buyer</p>
+          </div><!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+  <title>Frontend Mentor | Social proof section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <section class="flex flex-col w-full">
+    <div class="top flex gap-4 w-[80%] h-6">
+      <div class="text">
+        <h1 class="text-5xl font-bold word-wrap leading-4">10,000+ of our users love our products.</h1>
+        <p class="text-md"> We only provide great products combined with excellent customer service.
+          See what our satisfied customers are saying about our services.
+        </p>
+      </div>
+      <div class="ratings">
+        <div class="flex rating gap-4">
+          <div class="flex gap-2">
+            <img src="./images/icon-star.svg" />
+            <img src="./images/icon-star.svg" />
+            <img src="./images/icon-star.svg" />
+            <img src="./images/icon-star.svg" />
+            <img src="./images/icon-star.svg" />
+          </div>
+          <p class="font-bold text-sm">Rated 5 stars in Reviews</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="testimonials flex gap-3 w-full h-full">
+      <!--First person-->
+      <div class="flex gap-3 testifier-card rounded-sm my-4">
+        <div class="img-holder rounded-full overflow-hidden">
+          <img src="./images/image-colton.jpg" alt="Profile Pic">
+        </div>
+        <div class="testimony-body flex flex-col gap-3">
+          <div class="testifier-deets text text-xl">
+            <h3 class="text text-white text-xl font-bold">Colton Smith</h3>
+            <p class="text text-pink"> Verified Buyer</p>
+          </div>
+          <div class="testimony text text-white text-xl">
+            "We needed the same printed design as the one we had ordered a week prior.
+            Not only did they find the original order, but we also received it in time.
+            Excellent!"
+          </div>
+        </div>
+        <!--Second person-->
+        <div class="flex gap-3 testifier-card rounded-sm">
+          <div class="img-holder rounded-full overflow-hidden">
+            <img src="./images/image-irene.jpg" alt="Profile Pic">
+          </div>
+          <div class="testimony-body flex flex-col gap-3">
+            <div class="testifier-deets text text-xl">
+              <h3 class="text text-white text-xl font-bold">Irene Roberts</h3>
+              <p class="text text-pink"> Verified Buyer</p>
+            </div>
+            <div class="testimony text text-white text-xl">
+              "Customer service is always excellent and very quick turn around. Completely
+              delighted with the simplicity of the purchase and the speed of delivery."
+            </div>
+          </div>
+        </div>
+        <!--Third person-->
+          <div class="flex gap-4 testifier-card rounded-sm">
+            <div class="img-holder rounded-full overflow-hidden">
+              <img src="./images/image-anne.jpg" alt="Profile Pic">
+            </div>
+            <div class="testimony-body flex flex-col gap-3">
+              <div class="testifier-deets text text-xl">
+                <h3 class="text text-white text-xl font-bold">Anna Wallace</h3>
+                <p class="text text-pink"> Verified Buyer</p>
+              </div>
+              <div class="testimony text text-white text-xl">
+                "Put an order with this company and can only praise them for the very high
+                standard. Will definitely use them again and recommend them to everyone!"
+              </div>
+            </div>
+          </div>
+        
+      </div>
+  </section>
+
+
+
+
+
+  Rated 5 Stars in Reviews
+  Rated 5 Stars in Report Guru
+  Rated 5 Stars in BestTech
+
+
+
+
+
+
+
+
+
+  Anne Wallace
+  Verified Buyer
+  
+
+  <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your
+      Name Here</a>.
+  </div>
+</body>
+
 </html>

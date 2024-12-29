@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Spartan;
+    src: url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+}
+
+.testifier-card {
+    background:hsl(300, 43%, 22%);
+
+}
+.text-pink {
+    background-color: hsl(333, 80%, 67%);
+}
+.img-holder {
+    border-radius: 9999px;
+}
