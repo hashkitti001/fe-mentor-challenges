@@ -1,0 +1,219 @@
+@font-face {
+    font-family: "Red Hat";
+    src: url("./redhat_variable.ttf");
+}
+:root {
+    --grayblue: hsl(237, 18%, 59%);
+    --softred: hsl(345, 95%, 68%);
+    --white:hsl(0, 0%, 100%);
+    --desatblue: hsl(236, 21%, 26%);
+    --darkerblue:hsl(235, 15%, 14%);
+    --blackblue: hsl(234, 17%, 12%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Red Hat", "Calibri", sans-serif;
+}
+
+/* Mobile screens */
+@font-face {
+    font-family: "Red Hat";
+    src: url("./redhat_variable.ttf");
+}
+
+:root {
+    --grayblue: hsl(237, 18%, 59%);
+    --softred: hsl(345, 95%, 68%);
+    --white: hsl(0, 0%, 100%);
+    --desatblue: hsl(236, 21%, 26%);
+    --darkerblue: hsl(235, 15%, 14%);
+    --blackblue: hsl(234, 17%, 12%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Red Hat", "Calibri", sans-serif;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url("./images/bg-stars.svg");
+    background-color: var(--blackblue);
+}
+
+.main {
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message h1 {
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 3.5px;
+}
+
+.timer-item-labels {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 6.5rem;
+}
+
+h3 {
+    color: var(--grayblue);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.timers {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3.5rem;
+    width: 100%;
+}
+
+.timers .timer-item {
+    padding: 1.8rem;
+    background: var(--desatblue);
+    border-radius: 0.
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url("./images/bg-stars.svg");
+    background-color: var(--blackblue);
+    width: 100vw;
+}
+.main {
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.message h1 {
+    color:var(--white);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 3.5px;
+}
+.timer-item-labels {
+    margin-top: .5rem;
+    display: flex;
+    gap:6.5rem;
+}
+h3 {
+    color:var(--grayblue);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.timers {
+    display: flex;
+    gap:2rem;
+    margin-top: 3.5rem;
+    width: 100%;
+}
+.timers .timer-item {
+    padding: 1.8rem;
+    background: var(--desatblue);
+    border-radius: 0.6rem 0.6rem 2rem 2rem;
+    border-bottom: 0.9rem solid var(--darkerblue);
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Horizontal "fold" line with inset shadows on extreme ends */
+.timers .timer-item {
+    padding: 1.8rem;
+    background: var(--desatblue);
+    border-radius: 0.6rem 0.6rem 2rem 2rem;
+    border-bottom: 0.9rem solid var(--darkerblue);
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.timers .timer-item {
+    padding: 1.8rem;
+    background: var(--desatblue);
+    border-radius: 0.6rem 0.6rem 2rem 2rem;
+    border-bottom: 0.9rem solid var(--darkerblue);
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Horizontal "fold" line with inset semicircular shadows */
+.timers .timer-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 6px; /* Increased height of the crease */
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 1;
+    box-shadow: 
+        inset 20px -3px 20px -10px rgba(0, 0, 0, 0.6),  /* Left semicircular shadow */
+        inset -20px -3px 20px -10px rgba(0, 0, 0, 0.6); /* Right semicircular shadow */
+}
+
+/* Increased shading effect below the fold */
+.timers .timer-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.timer-item > .count > p {
+    font-size: 4rem;
+    font-weight: 700;
+    color:var(--softred);
+    
+}
+.footer {
+    background:url("./images/pattern-hills.svg");
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+    height:30vh;
+}
+.footer .social-icon img:hover{
+    background-color: var(--softred);
+    border-radius: 20%;
+}
+.attribution {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
