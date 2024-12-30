@@ -4,7 +4,7 @@
 /*Mobile layouts*/
 @media screen and (max-width:400px) {
     .formspace {
-        background: url('/ip-address-tracker-master/images/pattern-bg-mobile.png');
+        background: url('./images/pattern-bg-mobile.png')
 
     }
 
@@ -61,7 +61,7 @@
     
 
 .formspace {
-    background: url('/ip-address-tracker-master/images/pattern-bg-mobile.png');
+    background: url('./images/pattern-bg-desktop.png')
 
 }
 
@@ -116,7 +116,7 @@ input[type="text"] {
 /*Desktop layouts*/
 @media screen and (min-width:647px) and (max-width:1440px) {
     .formspace {
-        background: url('/ip-address-tracker-master/images/pattern-bg-desktop.png');
+        background: url('./images/pattern-bg-desktop.png');
     }
 
     .detail {
