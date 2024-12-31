@@ -1,0 +1,123 @@
+/* Root Variables */
+:root {
+    --green: hsl(75, 94%, 57%);
+    --white: hsl(0, 0%, 100%);
+    --grey700: hsl(0, 0%, 20%);
+    --grey800: hsl(0, 0%, 12%);
+    --grey900: hsl(0, 0%, 8%);
+}
+
+body {
+    background: var(--grey900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", system-ui, sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    background: var(--grey800);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.9rem;
+    border-radius: 0.6rem;
+    height: 70%;
+    min-width: 20rem;
+}
+
+.img-section img {
+    border-radius: 50%;
+    width: 4.5rem;
+}
+
+.text-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.text-section h2 {
+    color: var(--white);
+    font-size: 1.4rem;
+}
+
+.text-section h3 {
+    color: var(--green);
+    font-size: 0.8rem;
+}
+
+.text-section p {
+    color: var(--white);
+    font-size: 0.75rem;
+}
+
+.link-btns-sect {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    width: 90%;
+    margin: 1.2rem;
+}
+
+.link-btns-sect button {
+    background: var(--grey700);
+    padding: 0.9rem;
+    color: var(--white);
+    font-size: small;
+    font-weight: 600;
+    border-radius: 0.6rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in, color 0.2s ease-in;
+}
+
+.link-btns-sect button:hover {
+    background: var(--green);
+    color: var(--grey900);
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10vh 5vw;
+    }
+
+    .container {
+        height: auto;
+        max-width: 90%;
+        padding: 0 5%;
+        gap: 1rem;
+        /* Increase spacing */
+    }
+
+    .img-section img {
+        width: 5rem;
+    }
+
+    .text-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .text-section h3 {
+        font-size: 0.9rem;
+    }
+
+    .text-section p {
+        font-size: 0.8rem;
+    }
+
+    .link-btns-sect {
+        gap: 0.8rem;
+    }
+
+    .link-btns-sect button {
+        font-size: 0.85rem;
+        padding: 0.7rem;
+    }
+}
