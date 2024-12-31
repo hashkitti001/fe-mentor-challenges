@@ -67,7 +67,7 @@ body {
 .timer-item-labels {
     margin-top: 0.5rem;
     display: flex;
-    gap: 6.5rem;
+    gap: calc(6.5rem + 1.2vw);
 }
 
 h3 {
@@ -105,11 +105,11 @@ body {
     justify-content: center;
     align-items: center;
 }
-.message h1 {
+.message h2 {
     color:var(--white);
     text-transform: uppercase;
     font-size: 1.3rem;
-    letter-spacing: 3.5px;
+    letter-spacing: .7rem;
 }
 .timer-item-labels {
     margin-top: .5rem;
@@ -120,43 +120,27 @@ h3 {
     color:var(--grayblue);
     text-transform: uppercase;
     font-size: 14px;
+    letter-spacing: .2rem;
+    text-align: center;
 }
 .timers {
     display: flex;
     gap:2rem;
     margin-top: 3.5rem;
-    width: 100%;
+    max-width: 60%;
 }
 .timers .timer-item {
-    padding: 1.8rem;
+    text-align: center;
     background: var(--desatblue);
     border-radius: 0.6rem 0.6rem 2rem 2rem;
     border-bottom: 0.9rem solid var(--darkerblue);
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    width: calc(100% / 5);
 }
 
-/* Horizontal "fold" line with inset shadows on extreme ends */
-.timers .timer-item {
-    padding: 1.8rem;
-    background: var(--desatblue);
-    border-radius: 0.6rem 0.6rem 2rem 2rem;
-    border-bottom: 0.9rem solid var(--darkerblue);
-    position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
 
-.timers .timer-item {
-    padding: 1.8rem;
-    background: var(--desatblue);
-    border-radius: 0.6rem 0.6rem 2rem 2rem;
-    border-bottom: 0.9rem solid var(--darkerblue);
-    position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
 
 /* Horizontal "fold" line with inset semicircular shadows */
 .timers .timer-item::before {
